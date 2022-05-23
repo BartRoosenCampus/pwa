@@ -4,8 +4,12 @@ self.addEventListener('install', function (event){
         caches.open('static')
             .then(function (cache) {
                 cache.addAll([
-                    './',
-                    './index.html'
+                    '/',
+                    '/index.html',
+                    '/icons/logo-93x93.png',
+                    '/icons/logo-144x144.png',
+                    '/icons/logo-256x256.png',
+                    '/icons/logo-512x512.png'
                 ]);
             })
     );
