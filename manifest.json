@@ -1,0 +1,31 @@
+{
+  "name": "First PWA",
+  "short_name": "FPWA",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000",
+  "theme_color": "#333",
+  "icons": [
+    {
+      "src": "./icons/logo-93x93.png",
+      "sizes": "93x93",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/logo-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
