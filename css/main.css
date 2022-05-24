@@ -38,3 +38,30 @@ body {
     padding: .5em 0 .5em 1em;
     font-size: 2em;
 }
+
+.content {
+    width: 90%;
+    margin: 0.3em auto;
+    padding: .5em;
+    color: whitesmoke;
+    background-color: #0279C5;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.content-img {
+    width: 100%;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.solliciteer {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: #A4C9FF;
+    color: #0279C5;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}

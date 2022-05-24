@@ -10,6 +10,7 @@ if ('serviceWorker' in navigator) {
 
 const menuButton = document.getElementById('menu-button');
 const menuCard = document.getElementById('menu-card');
+const menuItems = document.getElementsByClassName('menu-item');
 let menuVisible = false;
 
 
@@ -21,6 +22,12 @@ menuButton.addEventListener('click', function () {
     }
     menuVisible = !menuVisible;
 });
+
+for (const item of menuItems) {
+    item.addEventListener('click', function () {
+        document.location.href = item.dataset.link;
+    });
+}
 
 function move(from, to, direction) {
     let id = null;
