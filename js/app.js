@@ -11,7 +11,10 @@ if ('serviceWorker' in navigator) {
 const menuButton = document.getElementById('menu-button');
 const menuCard = document.getElementById('menu-card');
 const menuItems = document.getElementsByClassName('menu-item');
+const sections = document.getElementsByClassName('section');
+
 let menuVisible = false;
+document.getElementById('info').style.display = 'block';
 
 
 menuButton.addEventListener('click', function () {
@@ -25,7 +28,14 @@ menuButton.addEventListener('click', function () {
 
 for (const item of menuItems) {
     item.addEventListener('click', function () {
-        document.location.href = item.dataset.link;
+        console.log(item.dataset.link);
+        for (const section of sections) {
+            section.style.display = 'none';
+        }
+        document.getElementById(item.dataset.link).style.display = 'block';
+        move(0, -500, 'down');
+        menuVisible = !menuVisible;
+        document.getElementById('title').innerHTML = item.dataset.link;
     });
 }
 
