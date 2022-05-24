@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: "Verdana Pro Light", sans-serif;
+    background-color: #A4C9FF;
+}
+
+.header {
+    background-color: #0279C5;
+}
+
+.container {
+    position: relative;
+}
+
+#title {
+    position: absolute;
+    color: whitesmoke;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#menu-button {
+    float: right;
+    margin: 1em 1em 0 0;
+}
+
+#menu-card {
+    position: absolute;
+    width: 100%;
+    background-color: whitesmoke;
+    color: #0279C5;
+    left: -500px
+}
+
+.menu-item {
+    border-bottom: 1px dotted #0279C5;
+    padding: .5em 0 .5em 1em;
+    font-size: 2em;
+}
