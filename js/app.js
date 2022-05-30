@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
         .then(function () {
@@ -12,10 +14,30 @@ const menuButton = document.getElementById('menu-button');
 const menuCard = document.getElementById('menu-card');
 const menuItems = document.getElementsByClassName('menu-item');
 const sections = document.getElementsByClassName('section');
+const locationButton = document.getElementById('location');
 
 let menuVisible = false;
 document.getElementById('info').style.display = 'block';
 
+locationButton.addEventListener('click', () => {
+    const success = (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+
+        fetch(geoApiUrl)
+            .then(res => res.json())
+            .then(data => {
+                document.querySelector('#myLocation').textContent = data.city;
+            })
+    }
+
+    const error = () => {
+        console.log('error');
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
+});
 
 menuButton.addEventListener('click', function () {
     if (menuVisible) {
