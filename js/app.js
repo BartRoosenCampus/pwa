@@ -38,7 +38,7 @@ locationButton.addEventListener('click', () => {
         const marker1 = new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
-        document.getElementById('map').style.display = 'block';
+        // document.getElementById('map').style.display = 'block';
     }
 
     const error = () => {
