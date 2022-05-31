@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
         .then(function () {
@@ -30,10 +28,21 @@ locationButton.addEventListener('click', () => {
             .then(data => {
                 document.querySelector('#myLocation').textContent = data.city;
             })
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYmFydHJvb3NlbiIsImEiOiJjbDNzcnQzc3YwMzdvM2Zxc2ZhMnJhMzRpIn0.ylhl966SCVVv6Qq9lj6GFQ';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [longitude, latitude], // starting position [lng, lat]
+            zoom: 9 // starting zoom
+        });
+        const marker1 = new mapboxgl.Marker()
+            .setLngLat([longitude, latitude])
+            .addTo(map);
+        document.getElementById('map').style.display = 'block';
     }
 
     const error = () => {
-        console.log('error');
+        document.querySelector('#myLocation').textContent = 'Geolocation blocked';
     }
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -65,6 +74,7 @@ function move(from, to, direction) {
     let id = null;
     clearInterval(id);
     id = setInterval(frame, 1);
+
     function frame() {
         if (from === to) {
             clearInterval(id);

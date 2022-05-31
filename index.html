@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>PWA</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="manifest" href="manifest.json"/>
     <link rel="stylesheet" href="css/main.css"/>
     <script src="js/app.js" defer></script>
@@ -11,7 +13,7 @@
 <body>
 <div class="header">
     <h1 id="title">info</h1>
-    <img id="location" src="icons/logo-93x93.png"/>
+    <img src="icons/logo-93x93.png"/>
     <img id="menu-button" src="icons/hamburger.png"/>
 </div>
 <div class="filler-93"></div>
@@ -22,7 +24,7 @@
         <div class="menu-item" data-link="opleidingen">opleidingen</div>
         <div class="menu-item" data-link="orienteren">oriënteren</div>
     </div>
-    <div id="myLocation">Location...</div>
+
     <div id="info" class="section">
         <div class="content">
             <img class="content-img" src="img/work.PNG"/>
@@ -81,6 +83,13 @@
             <p>Ben je de weg even kwijt</p>
             <p>Weet je niet welke deuren te openen om een toffe job te vinden</p>
             <p>Laat VDAB je gidsen op de arbeidsmarkt</p>
+        </div>
+        <div class="content">
+            <h3 id="myLocation">Location...</h3>
+            <div id='map'></div>
+            <div class="solliciteer" id="location">
+                Waar ben ik?
+            </div>
         </div>
     </div>
 </div>
