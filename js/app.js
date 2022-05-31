@@ -23,6 +23,8 @@ locationButton.addEventListener('click', () => {
         const longitude = position.coords.longitude;
         const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
 
+        document.getElementById('map').style.display = 'block';
+
         fetch(geoApiUrl)
             .then(res => res.json())
             .then(data => {
@@ -38,7 +40,7 @@ locationButton.addEventListener('click', () => {
         const marker1 = new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
-        // document.getElementById('map').style.display = 'block';
+
     }
 
     const error = () => {
